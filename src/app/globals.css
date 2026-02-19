@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --primary-red-500: hsl(1, 90%, 64%);
+  --primary-blue-950: hsl(219, 85%, 26%);
+
+  --neutral-navy-50: hsl(210, 60%, 98%);
+  --neutral-blue-100: hsl(211, 68%, 94%);
+  --neutral-navy-100: hsl(205, 33%, 90%);
+  --neutral-gray-500: hsl(219, 14%, 63%);
+  --neutral-gray-600: hsl(219, 12%, 42%);
+  --neutral-navy-950: hsl(224, 21%, 14%);
+}
+
+@theme inline {
+  --color-primary-red-500: var(--primary-red-500);
+  --color-primary-blue-950: var(--primary-blue-950);
+
+  --color-neutral-navy-50: var(--neutral-navy-50);
+  --color-neutral-blue-100: var(--neutral-blue-100);
+  --color-neutral-navy-100: var(--neutral-navy-100);
+  --color-neutral-gray-500: var(--neutral-gray-500);
+  --color-neutral-gray-600: var(--neutral-gray-600);
+  --color-neutral-navy-950: var(--neutral-navy-950);
+  
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
+}
