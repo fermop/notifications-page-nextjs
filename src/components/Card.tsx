@@ -39,14 +39,18 @@ export default function Card() {
 
       <ul className="space-y-2">
         {notificationsData.map((notification, index) => (
-          <li key={index} onClick={() => handleMarkAsRead(index)} className={`flex ${notification.isRead ? '' : 'bg-neutral-blue-100'} relative items-start gap-4 p-4 rounded-lg cursor-pointer`}>
+          <li key={index} onClick={() => handleMarkAsRead(index)} className={`flex ${notification.isRead ? '' : 'bg-neutral-blue-100'} items-start gap-4 p-4 rounded-lg cursor-pointer`}>
             <img src={`${notification.userImg}`} alt={`Avatar ${index + 1}`} className="w-10 h-10 rounded-full" />
 
-            <div className="">
-              <p className="w-full text-neutral-navy-950 text-sm md:text-base">
-                <span className="font-bold hover:text-primary-blue-950 cursor-pointer duration-300">{notification.userName} </span>{notification.typeDetails} {notification.type === 'privateMessage' ? '' : <span className="hover:text-primary-blue-950 font-medium duration-300"> {notification.content}</span>} {!notification.isRead && <span className="inline-block w-2 h-2 bg-primary-red-500 text-red rounded-full ml-1"></span>} {notification.type === 'commented' && <img className="absolute right-0 top-1/4 w-10 h-10 rounded hover:border hover:border-neutral-gray-500 duration-300" src={notification.url} alt="Commented image" />}
-              </p>
-              <p className="text-neutral-gray-500 text-xs mt-1">{notification.time}</p>
+            <div className={`${notification.type === 'commented' ? 'w-full flex justify-between gap-4' : ''}`}>
+              <div>
+                <p className="w-full text-neutral-navy-950 text-sm md:text-base">
+                  <span className="font-bold hover:text-primary-blue-950 cursor-pointer duration-300">{notification.userName} </span>{notification.typeDetails} {notification.type === 'privateMessage' ? '' : <span className="hover:text-primary-blue-950 font-medium duration-300"> {notification.content}</span>} {!notification.isRead && <span className="inline-block w-2 h-2 bg-primary-red-500 text-red rounded-full ml-1"></span>}
+                </p>
+                <p className="text-neutral-gray-500 text-xs mt-1">{notification.time}</p>
+              </div>
+
+              {notification.type === 'commented' && <img className="w-10 h-10 rounded hover:border hover:border-neutral-gray-500 duration-300" src={notification.url} alt="Commented image" />}
 
               {notification.type === 'privateMessage' && <p className="text-sm md:text-base text-neutral-gray-600 mt-2 p-3 md:p-5 bg-neutral-gray-100 hover:bg-neutral-blue-100 rounded border border-neutral-navy-100 duration-300">{notification.content}</p>}
             </div>
