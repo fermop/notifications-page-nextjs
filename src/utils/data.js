@@ -42,7 +42,7 @@ export const data = {
       "userName": "Kimberly Smith",
       "type": "commented",
       "typeDetails": "commented on your picture",
-      "content": "picture",
+      "content": "",
       "url": "/images/image-chess.webp",
       "time": "1 week ago",
       "isRead": true
